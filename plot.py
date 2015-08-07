@@ -9,3 +9,8 @@ import matplotlib.pyplot as plt
 a = [3,4,5]
 b = a[0]
 
+
+def set_values(a,b):
+    a = 1
+    b = 2
+    return a , b
