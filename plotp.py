@@ -1,5 +1,7 @@
+import time
+import pandas as pd
 
-# import pandas as pd
+import cProfile
 # import numpy as np
 # from datetime import datetime as d
 # import sys
@@ -12,6 +14,10 @@ b = a[0]
 
 
 def add_values(a,b):
+    s = 1
+    d = 3
+    k = 4
+    e =s*k*d
     return a + b
 
 
