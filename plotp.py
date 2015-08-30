@@ -1,5 +1,6 @@
 import time
 import pandas as pd
+import numpy as np
 
 import line_profiler
 from memory_profiler import profile
@@ -27,12 +28,21 @@ def add_values(a,b):
 
 
 
+
 def main():
     
     a = 1
     b = 2
     c = add_values(a, b)
     print c
+    
+    d = {'one' : np.random.rand(10),'two' : np.random.rand(10)}
+
+    df = pd.DataFrame(d)
+
+    df.plot(style=['o','rx'])
+
+
 
 if __name__ == "__main__":
     main()
