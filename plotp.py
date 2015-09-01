@@ -1,9 +1,12 @@
 import time
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
-import line_profiler
-from memory_profiler import profile
+import matplotlib
+matplotlib.style.use('ggplot')
+# import line_profiler
+# from memory_profiler import profile
 
 # import kernprof
 # from profile import Profile
@@ -18,7 +21,7 @@ from memory_profiler import profile
 a = [3,4,5]
 b = a[0]
 
-@profile
+#@profile
 def add_values(a,b):
     s = 1
     d = 3
@@ -36,11 +39,17 @@ def main():
     c = add_values(a, b)
     print c
     
-    d = {'one' : np.random.rand(10),'two' : np.random.rand(10)}
-
-    df = pd.DataFrame(d)
-
-    df.plot(style=['o','rx'])
+#     d = {'one' : np.random.rand(10),'two' : np.random.rand(10)}
+# 
+#     df = pd.DataFrame(d)
+# 
+#     df.plot(style=['o','rx'])
+    
+    
+    ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
+    ts = ts.cumsum()
+    ts.plot()
+    print ts
 
 
 
